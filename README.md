@@ -75,7 +75,7 @@ chmod +x main.sh modules/*.sh
 
 ## 📸 Ekran Görüntüleri
 
-_(Buraya aracın çalışırkenki ekran görüntülerini ekleyebilirsiniz)_
+<img src="docs/images/screenshot.png" alt="MR.GADGET Main Menu" width="100%">
 
 ---
 
