@@ -1,6 +1,15 @@
-# ⚡ MR.GADGET - Ultimate OSINT Framework
+<div align="center">
+  <img src="docs/images/logo.png" alt="MR.GADGET Logo" width="250">
 
-![Banner](https://img.shields.io/badge/Status-Active-green) ![Version](https://img.shields.io/badge/Version-2.0-blue) ![License](https://img.shields.io/badge/License-MIT-orange)
+# ⚡ MR.GADGET
+
+### Ultimate OSINT Framework - Enterprise Intelligence Edition
+
+![Status](https://img.shields.io/badge/Status-Active-green)
+![Version](https://img.shields.io/badge/Version-2.0-blue)
+![License](https://img.shields.io/badge/License-MIT-orange)
+
+</div>
 
 **MR.GADGET**, siber güvenlik uzmanları, araştırmacılar ve meraklılar için geliştirilmiş, **Bash tabanlı** kapsamlı bir Açık Kaynak İstihbarat (OSINT) aracıdır. Karmaşık istihbarat süreçlerini tek bir çatı altında toplar ve **25+ modülü** ile profesyonel analiz imkanı sunar.
 
