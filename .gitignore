@@ -1,0 +1,15 @@
+# System files
+thumbs.db
+desktop.ini
+*.tmp
+*.log
+
+# Project specific
+wordlists/
+reports/
+*.txt
+.DS_Store
+
+# IDE
+.vscode/
+.idea/

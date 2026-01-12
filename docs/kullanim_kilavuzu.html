@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MR.GADGET Kullanım Kılavuzu</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.8em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            color: #3498db;
+        }
+        h2 {
+            margin-top: 40px;
+            font-size: 1.8em;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+        h3 {
+            font-size: 1.4em;
+            color: #3498db;
+            margin-top: 25px;
+        }
+        h4 {
+            font-size: 1.2em;
+            color: #2980b9;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        code {
+            background-color: #f8f8f8;
+            padding: 2px 6px;
+            border-radius: 3px;
+            border: 1px solid #e0e0e0;
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+            overflow-x: auto;
+            line-height: 1.4;
+        }
+        ul, ol {
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .feature-list {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+        .feature-list li {
+            position: relative;
+            margin-bottom: 15px;
+            padding-left: 30px;
+        }
+        .feature-list li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+        }
+        .warning {
+            background-color: #fffaeb;
+            border-left: 4px solid #f1c40f;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .warning h4 {
+            color: #e67e22;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .module-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .module-card .module-header {
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .module-card .module-content {
+            padding: 15px;
+        }
+        .module-card .module-features {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .module-card .module-features li {
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .module-card .module-features li:before {
+            content: "•";
+            position: absolute;
+            left: 10px;
+            color: #3498db;
+        }
+        .module-card .module-usage {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .module-card .module-usage h4 {
+            margin-top: 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo img {
+            max-width: 200px;
+        }
+        .terminal {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            border-radius: 5px;
+            padding: 15px;
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+            margin-bottom: 20px;
+        }
+        .terminal p {
+            margin: 0;
+            line-height: 1.5;
+        }
+        .terminal .prompt {
+            color: #2ecc71;
+        }
+        .terminal .command {
+            color: #e74c3c;
+        }
+        .terminal .output {
+            color: #bdc3c7;
+        }
+        .blue {
+            color: #3498db;
+        }
+        .green {
+            color: #2ecc71;
+        }
+        .red {
+            color: #e74c3c;
+        }
+        .yellow {
+            color: #f1c40f;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+        .toc {
+            background-color: #f8f8f8;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .toc h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .toc li {
+            margin-bottom: 8px;
+        }
+        .toc a {
+            text-decoration: none;
+            color: #3498db;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        .toc .toc-section {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .toc .toc-subsection {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <!-- Logo yerine MR.GADGET başlığını kullanıyoruz -->
+            <h1>MR.GADGET</h1>
+            <p style="text-align: center; font-size: 1.2em; margin-top: -20px;">Açık Kaynak İstihbarat Aracı</p>
+        </div>
+        
+        <div class="toc">
+            <h3>İçindekiler</h3>
+            <ul>
+                <li><a href="#giris">1. Giriş</a></li>
+                <li><a href="#kurulum">2. Kurulum</a></li>
+                <li><a href="#baslarken">3. Başlarken</a></li>
+                <li class="toc-section"><a href="#moduller">4. Modüller</a></li>
+                <li class="toc-subsection"><a href="#domain-analizi">4.1. Domain Analizi</a></li>
+                <li class="toc-subsection"><a href="#sosyal-medya-analizi">4.2. Sosyal Medya Analizi</a></li>
+                <li class="toc-subsection"><a href="#google-dorking">4.3. Google Dorking</a></li>
+                <li class="toc-subsection"><a href="#whois-sorgusu">4.4. Whois Sorgusu</a></li>
+                <li class="toc-subsection"><a href="#eposta-analizi">4.5. E-posta Analizi</a></li>
+                <li class="toc-subsection"><a href="#ssl-sertifikasi">4.6. SSL Sertifikası Kontrolü</a></li>
+                <li class="toc-subsection"><a href="#port-tarama">4.7. Port Tarama</a></li>
+                <li class="toc-subsection"><a href="#subdomain-tarama">4.8. Subdomain Tarama</a></li>
+                <li class="toc-subsection"><a href="#dns-analizi">4.9. Detaylı DNS Analizi</a></li>
+                <li class="toc-subsection"><a href="#ip-konum">4.10. IP Konum Analizi</a></li>
+                <li class="toc-subsection"><a href="#html-rapor">4.11. HTML Rapor Oluşturma</a></li>
+                <li><a href="#raporlar">5. Raporlar</a></li>
+                <li><a href="#sorun-giderme">6. Sorun Giderme</a></li>
+                <li><a href="#sss">7. Sık Sorulan Sorular</a></li>
+            </ul>
+        </div>
+        
+        <section id="giris">
+            <h2>1. Giriş</h2>
+            <p>
+                MR.GADGET, açık kaynak istihbarat (OSINT) çalışmaları için geliştirilmiş kapsamlı bir komut satırı aracıdır. 
+                Bu araç, internet üzerinde hedef hakkında çeşitli bilgileri toplamak, analiz etmek ve raporlamak için tasarlanmıştır.
+            </p>
+            
+            <h3>Neden MR.GADGET?</h3>
+            <ul class="feature-list">
+                <li><strong>Tek Çatı Altında Birçok Araç:</strong> Farklı OSINT araçlarını ayrı ayrı kullanmak yerine, MR.GADGET ile tüm araçlara tek bir yerden erişebilirsiniz.</li>
+                <li><strong>Kullanımı Kolay:</strong> Renkli ve kullanıcı dostu arayüz ile kolayca navigasyon yapabilirsiniz.</li>
+                <li><strong>Otomatik Raporlama:</strong> Tüm bulgularınız otomatik olarak raporlanır ve istendiğinde HTML formatında dışa aktarılabilir.</li>
+                <li><strong>Platformlar Arası Uyumluluk:</strong> Windows, Linux ve macOS platformlarında çalışabilecek şekilde tasarlanmıştır.</li>
+            </ul>
+        </section>
+        
+        <section id="kurulum">
+            <h2>2. Kurulum</h2>
+            
+            <h3>Gereksinimler</h3>
+            <ul>
+                <li>Bash kabuğu (Windows'ta Git Bash veya WSL)</li>
+                <li>Curl</li>
+                <li>Dig (İsteğe bağlı, daha detaylı DNS analizleri için)</li>
+                <li>Nmap (İsteğe bağlı, daha kapsamlı port taramaları için)</li>
+                <li>Whois (İsteğe bağlı, domain sahiplik bilgileri için)</li>
+                <li>OpenSSL (İsteğe bağlı, SSL sertifika analizleri için)</li>
+            </ul>
+            
+            <h3>Hızlı Kurulum</h3>
+            <div class="terminal">
+                <p><span class="prompt">user@system:~$</span> <span class="command">git clone https://github.com/kullanici/mr-gadget.git</span></p>
+                <p><span class="prompt">user@system:~$</span> <span class="command">cd mr-gadget</span></p>
+                <p><span class="prompt">user@system:~/mr-gadget$</span> <span class="command">chmod +x main.sh</span></p>
+                <p><span class="prompt">user@system:~/mr-gadget$</span> <span class="command">./main.sh</span></p>
+            </div>
+        </section>
+        
+        <section id="baslarken">
+            <h2>3. Başlarken</h2>
+            <p>
+                MR.GADGET'i başlattığınızda, renkli bir ana menü karşınıza çıkacaktır. Bu menüden kullanmak istediğiniz modülü seçebilirsiniz.
+            </p>
+            
+            <div class="terminal">
+                <p><span class="blue">███╗   ███╗██████╗    ██████╗  █████╗ ██████╗  ██████╗ ███████╗████████╗</span></p>
+                <p><span class="blue">████╗ ████║██╔══██╗  ██╔════╝ ██╔══██╗██╔══██╗██╔════╝ ██╔════╝╚══██╔══╝</span></p>
+                <p><span class="blue">██╔████╔██║██████╔╝  ██║  ███╗███████║██║  ██║██║  ███╗█████╗     ██║   </span></p>
+                <p><span class="blue">██║╚██╔╝██║██╔══██╗  ██║   ██║██╔══██║██║  ██║██║   ██║██╔══╝     ██║   </span></p>
+                <p><span class="blue">██║ ╚═╝ ██║██║  ██║  ╚██████╔╝██║  ██║██████╔╝╚██████╔╝███████╗   ██║   </span></p>
+                <p><span class="blue">╚═╝     ╚═╝╚═╝  ╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═════╝  ╚═════╝ ╚══════╝   ╚═╝   </span></p>
+                <p><span class="yellow">                   AÇIK KAYNAK İSTİHBARAT ARACI</span></p>      
+                <p><span class="green">              --Hedefini Tanı, Güvenliğini Sağla--</span></p>
+                <p></p>
+                <p><span class="blue">════════════════════════════════════════════════════════════════════</span></p>
+                <p></p>
+                <p><span class="white"> MENÜ SEÇENEKLERI </span></p>
+                <p></p>
+                <p><span class="yellow">[</span><span class="blue">1</span><span class="yellow">]</span> <span class="blue">Domain Analizi</span>        - Domain hakkında temel bilgiler</p>
+                <p><span class="yellow">[</span><span class="blue">2</span><span class="yellow">]</span> <span class="blue">Sosyal Medya Analizi</span>  - Sosyal medya hesaplarını ara</p>
+                <p><span class="yellow">[</span><span class="blue">3</span><span class="yellow">]</span> <span class="blue">Google Dorking</span>        - Güçlü Google sorguları</p>
+                <p>...</p>
+            </div>
+        </section>
+        
+        <section id="moduller">
+            <h2>4. Modüller</h2>
+            
+            <div id="domain-analizi" class="module-card">
+                <div class="module-header">Domain Analizi</div>
+                <div class="module-content">
+                    <p>Bu modül, bir domain hakkında temel bilgileri toplar:</p>
+                    <ul class="module-features">
+                        <li>IP adresi</li>
+                        <li>A, NS, MX ve TXT DNS kayıtları</li>
+                        <li>HTTP başlık bilgileri</li>
+                    </ul>
+                    
+                    <div class="module-usage">
+                        <h4>Kullanım:</h4>
+                        <ol>
+                            <li>Ana menüden "1" seçeneğini seçin</li>
+                            <li>Analiz etmek istediğiniz domain adresini girin (ör. example.com)</li>
+                            <li>Sonuçlar ekranda gösterilir ve aynı zamanda "reports/domain_report.txt" dosyasına kaydedilir</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="sosyal-medya-analizi" class="module-card">
+                <div class="module-header">Sosyal Medya Analizi</div>
+                <div class="module-content">
+                    <p>Bu modül, belirli bir kullanıcı adını çeşitli sosyal medya platformlarında arayarak potansiyel hesapları tespit eder:</p>
+                    <ul class="module-features">
+                        <li>Twitter/X</li>
+                        <li>Instagram</li>
+                        <li>LinkedIn</li>
+                        <li>GitHub</li>
+                        <li>Facebook</li>
+                        <li>TikTok</li>
+                    </ul>
+                    
+                    <div class="module-usage">
+                        <h4>Kullanım:</h4>
+                        <ol>
+                            <li>Ana menüden "2" seçeneğini seçin</li>
+                            <li>Aramak istediğiniz kullanıcı adını girin</li>
+                            <li>Bağlantılar "reports/social_report.txt" dosyasına kaydedilir</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="google-dorking" class="module-card">
+                <div class="module-header">Google Dorking</div>
+                <div class="module-content">
+                    <p>Bu modül, hedef domain için çeşitli Google dorking sorguları oluşturur:</p>
+                    <ul class="module-features">
+                        <li>Site içi arama</li>
+                        <li>Dosya türü aramaları (PDF, DOC, XLS, vb.)</li>
+                        <li>Gizli dizinler</li>
+                        <li>Login sayfaları</li>
+                        <li>Potansiyel güvenlik açıkları</li>
+                    </ul>
+                    
+                    <div class="module-usage">
+                        <h4>Kullanım:</h4>
+                        <ol>
+                            <li>Ana menüden "3" seçeneğini seçin</li>
+                            <li>Domain veya anahtar kelime girin</li>
+                            <li>Oluşturulan dork sorguları "reports/dorking_report.txt" dosyasına kaydedilir</li>
+                            <li>Bu sorguları Google'da kullanarak daha fazla bilgi toplayabilirsiniz</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="whois-sorgusu" class="module-card">
+                <div class="module-header">Whois Sorgusu</div>
+                <div class="module-content">
+                    <p>Bu modül, bir domain hakkında whois bilgilerini alarak kayıt tarihi, son kullanma tarihi, kayıt eden kişi/kurum gibi bilgilere erişim sağlar.</p>
+                    
+                    <div class="module-usage">
+                        <h4>Kullanım:</h4>
+                        <ol>
+                            <li>Ana menüden "4" seçeneğini seçin</li>
+                            <li>Domain adresini girin</li>
+                            <li>Whois bilgileri "reports/whois_report.txt" dosyasına kaydedilir</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="eposta-analizi" class="module-card">
+                <div class="module-header">E-posta Analizi</div>
+                <div class="module-content">
+                    <p>Bu modül, bir e-posta adresini analiz ederek:</p>
+                    <ul class="module-features">
+                        <li>E-posta domaini hakkında bilgi</li>
+                        <li>MX (mail sunucusu) kayıtları</li>
+                        <li>SPF ve DMARC kayıtları</li>
+                        <li>Olası veri ihlalleri hakkında notlar</li>
+                    </ul>
+                    
+                    <div class="module-usage">
+                        <h4>Kullanım:</h4>
+                        <ol>
+                            <li>Ana menüden "5" seçeneğini seçin</li>
+                            <li>Analiz etmek istediğiniz e-posta adresini girin</li>
+                            <li>Sonuçlar "reports/email_report.txt" dosyasına kaydedilir</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="ssl-sertifikasi" class="module-card">
+                <div class="module-header">SSL Sertifikası Kontrolü</div>
+                <div class="module-content">
+                    <p>Bu modül, bir web sitesinin SSL/TLS sertifikasını analiz eder:</p>
+                    <ul class="module-features">
+                        <li>Sertifika bilgileri (süre, veren kurum, vb.)</li>
+                        <li>Sertifika zinciri</li>
+                        <li>SSL/TLS protokol ve şifreleme bilgileri</li>
+                    </ul>
+                    
+                    <div class="module-usage">
+                        <h4>Kullanım:</h4>
+                        <ol>
+                            <li>Ana menüden "6" seçeneğini seçin</li>
+                            <li>Domain adresini girin</li>
+                            <li>SSL analizi "reports/ssl_report.txt" dosyasına kaydedilir</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="port-tarama" class="module-card">
+                <div class="module-header">Port Tarama</div>
+                <div class="module-content">
+                    <p>Bu modül, hedef IP veya domainde açık portları ve çalışan servisleri tespit eder:</p>
+                    <ul class="module-features">
+                        <li>Yaygın portların (HTTP, SSH, FTP, vb.) durumu</li>
+                        <li>Tespit edilen servisler ve versiyonlar (nmap mevcutsa)</li>
+                    </ul>
+                    
+                    <div class="module-usage">
+                        <h4>Kullanım:</h4>
+                        <ol>
+                            <li>Ana menüden "7" seçeneğini seçin</li>
+                            <li>IP adresi veya domain girin</li>
+                            <li>Tarama sonuçları "reports/portscan_report.txt" dosyasına kaydedilir</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="subdomain-tarama" class="module-card">
+                <div class="module-header">Subdomain Tarama</div>
+                <div class="module-content">
+                    <p>Bu modül, bir ana domainin alt domainlerini (subdomain) keşfetmek için kullanılır:</p>
+                    <ul class="module-features">
+                        <li>Wordlist tabanlı brute force tarama</li>
+                        <li>DNS kayıtları üzerinden subdomain tespiti</li>
+                        <li>Bulunan subdomainlerin listesi</li>
+                    </ul>
+                    
+                    <div class="module-usage">
+                        <h4>Kullanım:</h4>
+                        <ol>
+                            <li>Ana menüden "8" seçeneğini seçin</li>
+                            <li>Ana domain adresini girin</li>
+                            <li>Bulunan subdomainler "reports/subdomain_report.txt" dosyasına kaydedilir</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="dns-analizi" class="module-card">
+                <div class="module-header">Detaylı DNS Analizi</div>
+                <div class="module-content">
+                    <p>Bu modül, bir domain için kapsamlı DNS analizi sağlar:</p>
+                    <ul class="module-features">
+                        <li>Tüm kayıt türleri (A, AAAA, CNAME, MX, NS, TXT, SOA, SRV, vb.)</li>
+                        <li>DNSSEC kontrolleri</li>
+                        <li>TTL (Time to Live) bilgileri</li>
+                    </ul>
+                    
+                    <div class="module-usage">
+                        <h4>Kullanım:</h4>
+                        <ol>
+                            <li>Ana menüden "9" seçeneğini seçin</li>
+                            <li>Domain adresini girin</li>
+                            <li>Detaylı DNS analizi "reports/dns_analysis_report.txt" dosyasına kaydedilir</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="ip-konum" class="module-card">
+                <div class="module-header">IP Konum Analizi</div>
+                <div class="module-content">
+                    <p>Bu modül, bir IP adresinin coğrafi konumunu belirlemeye yardımcı olur:</p>
+                    <ul class="module-features">
+                        <li>Ülke, şehir, bölge bilgileri</li>
+                        <li>ISP ve organizasyon</li>
+                        <li>Zaman dilimi</li>
+                        <li>Enlem/boylam koordinatları</li>
+                    </ul>
+                    
+                    <div class="module-usage">
+                        <h4>Kullanım:</h4>
+                        <ol>
+                            <li>Ana menüden "10" seçeneğini seçin</li>
+                            <li>IP adresi veya domain girin</li>
+                            <li>Konum bilgileri "reports/geoip_report.txt" dosyasına kaydedilir</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="html-rapor" class="module-card">
+                <div class="module-header">HTML Rapor Oluşturma</div>
+                <div class="module-content">
+                    <p>Bu modül, tüm oluşturulmuş raporları görsel olarak daha zengin HTML formatına dönüştürür:</p>
+                    <ul class="module-features">
+                        <li>Tüm raporlar tek bir HTML dosyasında birleştirilir</li>
+                        <li>Okunması ve paylaşılması kolay format</li>
+                        <li>Otomatik olarak web tarayıcısında açılma</li>
+                    </ul>
+                    
+                    <div class="module-usage">
+                        <h4>Kullanım:</h4>
+                        <ol>
+                            <li>Ana menüden "11" seçeneğini seçin</li>
+                            <li>HTML rapor otomatik olarak oluşturulup "reports/html/" klasörüne kaydedilir</li>
+                            <li>Rapor otomatik olarak web tarayıcısında açılır</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="raporlar">
+            <h2>5. Raporlar</h2>
+            <p>
+                MR.GADGET, tüm analiz sonuçlarını otomatik olarak "reports/" klasörüne kaydeder. Her modül kendi rapor dosyasını oluşturur:
+            </p>
+            
+            <table>
+                <tr>
+                    <th>Dosya Adı</th>
+                    <th>İçerik</th>
+                </tr>
+                <tr>
+                    <td><code>domain_report.txt</code></td>
+                    <td>Domain analiz raporu</td>
+                </tr>
+                <tr>
+                    <td><code>social_report.txt</code></td>
+                    <td>Sosyal medya analiz raporu</td>
+                </tr>
+                <tr>
+                    <td><code>dorking_report.txt</code></td>
+                    <td>Google dorking raporu</td>
+                </tr>
+                <tr>
+                    <td><code>whois_report.txt</code></td>
+                    <td>Whois sorgu raporu</td>
+                </tr>
+                <tr>
+                    <td><code>email_report.txt</code></td>
+                    <td>E-posta analiz raporu</td>
+                </tr>
+                <tr>
+                    <td><code>ssl_report.txt</code></td>
+                    <td>SSL sertifika analiz raporu</td>
+                </tr>
+                <tr>
+                    <td><code>portscan_report.txt</code></td>
+                    <td>Port tarama raporu</td>
+                </tr>
+                <tr>
+                    <td><code>subdomain_report.txt</code></td>
+                    <td>Subdomain tarama raporu</td>
+                </tr>
+                <tr>
+                    <td><code>dns_analysis_report.txt</code></td>
+                    <td>Detaylı DNS analiz raporu</td>
+                </tr>
+                <tr>
+                    <td><code>geoip_report.txt</code></td>
+                    <td>IP konum analiz raporu</td>
+                </tr>
+            </table>
+            
+            <p>
+                Ayrıca, HTML rapor oluşturma modülü ile tüm bu raporları tek bir HTML dosyasında birleştirebilirsiniz. 
+                HTML raporlar "reports/html/" klasöründe saklanır.
+            </p>
+        </section>
+        
+        <section id="sorun-giderme">
+            <h2>6. Sorun Giderme</h2>
+            
+            <h3>Yaygın Sorunlar ve Çözümleri</h3>
+            
+            <div class="warning">
+                <h4>Bash Hatası Alıyorum</h4>
+                <ul>
+                    <li>Windows kullanıyorsanız Git Bash veya WSL (Windows Subsystem for Linux) kurulu olduğundan emin olun</li>
+                    <li>Script'in başındaki shebang satırının <code>#!/bin/bash</code> olduğunu kontrol edin</li>
+                </ul>
+            </div>
+            
+            <div class="warning">
+                <h4>Komut Bulunamadı Hatası</h4>
+                <ul>
+                    <li>Curl, dig, nmap gibi harici araçları kullanabilmek için bunların sisteminizde yüklü olması gerekir</li>
+                    <li>Eksik aracı yükleyin (örn. <code>apt install curl</code> veya <code>brew install dig</code>)</li>
+                </ul>
+            </div>
+            
+            <div class="warning">
+                <h4>Rapor Dosyası Oluşturulmuyor</h4>
+                <ul>
+                    <li>"reports" klasörünün yazma yetkisine sahip olduğunuzdan emin olun</li>
+                    <li>Klasörü manuel olarak oluşturmayı deneyin: <code>mkdir -p reports</code></li>
+                </ul>
+            </div>
+            
+            <div class="warning">
+                <h4>Modüller Çalışmıyor</h4>
+                <ul>
+                    <li>Modül dosyalarının çalıştırma yetkisine sahip olduğundan emin olun: <code>chmod +x modules/*.sh</code></li>
+                    <li>Modül dosya yollarının doğru olduğunu kontrol edin</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="sss">
+            <h2>7. Sık Sorulan Sorular</h2>
+            
+            <h3>MR.GADGET yasal mı?</h3>
+            <p>
+                MR.GADGET, herkes için erişilebilen açık kaynaklı bilgileri toplar ve analiz eder. Ancak, herhangi bir bilgi toplama aracı gibi, 
+                başkalarının sistemlerine izinsiz erişim veya tarama yapma amacıyla kullanılmamalıdır. Hedef sistemler üzerinde tarama yapmadan 
+                önce gerekli izinleri aldığınızdan emin olun.
+            </p>
+            
+            <h3>Bu araç ne kadar güvenilir?</h3>
+            <p>
+                MR.GADGET, çeşitli açık kaynaklı araçlar ve API'ler kullanarak bilgi toplar. Sonuçların doğruluğu bu kaynakların kalitesine 
+                ve ulaşılabilirliğine bağlıdır. Her durumda, sonuçları doğrulamak için birden fazla kaynağı kontrol etmeniz önerilir.
+            </p>
+            
+            <h3>Rapor dosyalarımı nasıl paylaşabilirim?</h3>
+            <p>
+                "HTML Rapor Oluşturma" modülünü kullanarak (ana menüde 11. seçenek) tüm raporlarınızı tek bir HTML dosyasında birleştirebilirsiniz. 
+                Bu HTML dosyası, paylaşması kolay ve görsel olarak daha zengin bir formattır.
+            </p>
+            
+            <h3>Tüm özellikler ücretsiz mi?</h3>
+            <p>
+                Evet, MR.GADGET tamamen ücretsizdir ve açık kaynak kodludur. Bazı modüller üçüncü taraf API'lere (IP geolocation gibi) 
+                bağlıdır ve bu API'lerin kendi kullanım limitleri olabilir.
+            </p>
+        </section>
+        
+        <div class="footer">
+            <p>MR.GADGET - Hedefini Tanı, Güvenliğini Sağla</p>
+            <p>2024 &copy; Tüm Hakları Saklıdır</p>
+        </div>
+    </div>
+</body>
+</html> 
